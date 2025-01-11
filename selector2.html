@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Hierarchy Selectors</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div>
+        <p class="class-message">Message 1 inside div.</p>
+        <p>Message 2 inside div.</p>
+    </div>
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+    </ul>
+    <p>Paragraph outside div.</p>
+    <p>Another paragraph outside div.</p>
+    <button id="id-message">Click Me</button>
+
+    <script>
+        $(document).ready(function () {
+            // Select all <p> elements inside any <div>
+            $('div p').css('color', 'blue');
+
+            // Select all <li> elements that are direct children of any <ul>
+            $('ul > li').css('font-weight', 'bold');
+
+            // Select the first <p> element that is immediately after any <div>
+            $('div + p').css('background-color', 'yellow');
+
+            // Add a click handler to demonstrate the changes
+            $('#id-message').click(function () {
+                alert('Hierarchy selectors applied successfully!');
+            });
+        });
+    </script>
+</body>
+</html>

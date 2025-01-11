@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Selectors Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+</head>
+<body>
+
+    <!-- Example of input with name="email" -->
+    <input type="text" name="email" placeholder="Enter your email">
+
+    <!-- Example of secure link -->
+    <a href="https://example.com">Visit Secure Site</a>
+
+    <!-- Example of input with placeholder attribute -->
+    <input type="text" placeholder="Enter your name">
+
+    <script>
+        $(document).ready(function () {
+            // 1. Select input elements with name="email" and highlight them
+            $('input[name="email"]').addClass('highlight');
+
+            // 2. Select all links starting with "https" and style them
+            $('a[href^="https"]').addClass('secure-link');
+
+            // 3. Select input elements with a "placeholder" attribute and apply a style
+            $('input[placeholder]').addClass('placeholder-highlight');
+        });
+    </script>
+    
+</body>
+</html>

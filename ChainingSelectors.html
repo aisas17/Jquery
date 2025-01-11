@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaining Selectors Example</title>
+</head>
+<body>
+
+    <div id="main">
+        <p>This is paragraph 1.</p>
+        <p>This is paragraph 2.</p>
+        <p>This is paragraph 3.</p>
+    </div>
+
+    <button id="toggle">Toggle Paragraphs</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Chain methods to select, style, and animate elements
+            $('#main') // Select the #main element
+                .find('p') // Find all <p> elements inside #main
+                .addClass('highlight') // Add 'highlight' class to those <p> elements
+                .fadeIn(1000) // Fade them in over 1 second
+                .css('color', 'blue'); // Change their text color to blue
+            
+            // Another example with a button click event
+            $('#toggle').click(function () {
+                $('#main')
+                    .find('p')
+                    .toggleClass('special')
+                    .fadeToggle(500); // Toggle special class and animate fade
+            });
+        });
+    </script>
+
+</body>
+</html>

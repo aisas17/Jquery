@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+</head>
+<body>
+
+<h1>Keyboard Events</h1>
+<input type="text" id="keyboard-input" placeholder="Type something here">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+    // Keydown event
+    $('#keyboard-input').on('keydown', function (e) {
+        console.log(`Key down: ${e.key}`);
+    });
+
+    // Keyup event
+    $('#keyboard-input').on('keyup', function (e) {
+        console.log(`Key up: ${e.key}`);
+    });
+});
+</script>
+
+</body>
+</html>

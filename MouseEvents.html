@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+</head>
+<body>
+
+<h1>Mouse Events</h1>
+<div class="box" id="mouse-box">Hover or Click Me!</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+    // 1. Click event
+    $('#mouse-box').on('click', function () {
+        alert('Box clicked!');
+    });
+
+    // 2. Double-click event
+    $('#mouse-box').on('dblclick', function () {
+        alert('Box double-clicked!');
+    });
+
+    // 3. Mouse enter event
+    $('#mouse-box').on('mouseenter', function () {
+        $(this).addClass('highlight');
+    });
+
+    // 4. Mouse leave event
+    $('#mouse-box').on('mouseleave', function () {
+        $(this).removeClass('highlight');
+    });
+
+    // 5. Mouse move event
+    $('#mouse-box').on('mousemove', function (e) {
+        console.log(`Mouse Position - X: ${e.pageX}, Y: ${e.pageY}`);
+    });
+});
+</script>
+
+</body>
+</html>
